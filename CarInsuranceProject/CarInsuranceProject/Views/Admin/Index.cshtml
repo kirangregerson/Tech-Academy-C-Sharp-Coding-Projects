@@ -1,0 +1,49 @@
+﻿@using CarInsuranceProject.Viewmodels
+@model List<QuoteVm>
+
+<style>
+    .card-header{
+        background-color: cadetblue
+    }
+
+    .card-body{
+        background-color: dimgray
+    }
+</style>
+<div class="row no-gutters m-3">
+    <div class="card col-sm-14 col-md-12 col-lg-8 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">User Information</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var quote in Model)
+            {
+                using (Html.BeginForm("Unsubscribe", "Admin", FormMethod.Post))
+                {
+                    <input type="hidden" name="Id" value="@quote.Id" />
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            @quote.FirstName
+                        </div>
+                        <div class="col">
+                            @quote.LastName
+                        </div>
+                        <div class="col">
+                            @quote.EmailAddress
+                        </div>
+                        <div class="col5">
+                            @Math.Round((decimal)quote.CustomerQuote, 2)
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-danger btn-block">
+                                Unsubscribe
+                            </button>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</div>
+

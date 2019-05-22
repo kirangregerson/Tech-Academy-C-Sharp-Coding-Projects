@@ -1,0 +1,64 @@
+﻿
+<style>
+    .card-header {
+        background-color: gainsboro
+    }
+
+    .card-body {
+        background-color: darkslategray;
+        color: white;
+    }
+</style>
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">Get a Quote on Car Insurance!</h5>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("MakeQuote", "Home", FormMethod.Post))
+            {
+            <div class="row no-gutters">
+                <div class="form-group col-md-12">
+                    <input name="FirstName" type="text" class="form-control" placeholder="First Name" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="LastName" type="text" class="form-control" placeholder="Last Name" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="EmailAddress" type="email" class="form-control" placeholder="Email Address" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="BirthDate" type="text" class="form-control" placeholder="DOB (mm/dd/yyyy)" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="CarYear" type="number" class="form-control" placeholder="Car Year" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="CarMake" type="text" class="form-control" placeholder="Car Manufacturer" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="CarModel" type="text" class="form-control" placeholder="Car Model" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="NumberOfTickets" type="text" class="form-control" placeholder="Number of Speeding Tickets" />
+                </div>
+                <div class="form-group col-md-12">
+                    <br/>
+                    Have you ever received a DUI? <br />
+                    Yes <input name="HaveDui" type="radio" value="Yes" />
+                    No <input name="HaveDui" type="radio" value="No" />
+                    <br/>
+                </div>
+                <div class="form-group col-md-12">
+                    <br/>
+                    Choose an insurance type <br />
+                    Full Coverage <input name="InsuranceType" type="radio" value="Full Coverage" />
+                    Liability <input name="InsuranceType" type="radio" value="Liability" />
+                    <br/>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary">Submit</button>
+            </div>
+            }
+        </div>
+    </div>
+</div>
